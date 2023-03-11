@@ -109,7 +109,24 @@ public class LetterService : ILetterService
     static void Main()
     {
         LetterService p = new LetterService();
-        p.CombineTwoLetters("admission-01301516.txt","scholarship-01301516.txt","combined.txt");
+        string dateString = DateTime.Now.ToString("yyyyMMdd");
+        string[] admissionLetters = Directory.GetFiles("Input/Admission/" + dateString);
+        string[] scholarshipLetters = Directory.GetFiles("Input/Scholarships/" + dateString);
+        var res = admissionLetters.Zip(scholarshipLetters, (a,s) => new {Admission = a, Scholarship = s});
+        foreach (var a in admissionLetters) {
+            foreach (var s in scholarshipLetters) {
+                if (a.Substring(35,8)== s.Substring(40,8)) {
+                    string id = a.Substring(35,8);
+                    string newFile = id + "-admission-scholarship.txt";
+                    string afile = a.Substring(25,22).ToString();
+                    string sfile = s.Substring(28,24).ToString();
+                    Console.WriteLine(a);
+                    Console.WriteLine(s);
+                    p.CombineTwoLetters(a,s,newFile);
+                }
+            }
+        }
+        //p.CombineTwoLetters("admission-01301516.txt","scholarship-01301516.txt","combined.txt");
         //p.ArchiveFiles();
     }
 }
