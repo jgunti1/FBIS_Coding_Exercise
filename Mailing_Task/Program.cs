@@ -36,6 +36,9 @@ public class LetterService : ILetterService
                 lineNum++;
             }
         }
+        string destinationFile = "Output/" +resultFile;
+        File.Move(resultFile,destinationFile);
+        
     
         
     }
