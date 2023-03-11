@@ -1,0 +1,30 @@
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/obj/Debug/net7.0/Mailing Task.csproj.AssemblyReference.cache
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/obj/Debug/net7.0/Mailing Task.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/obj/Debug/net7.0/Mailing Task.AssemblyInfoInputs.cache
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/obj/Debug/net7.0/Mailing Task.AssemblyInfo.cs
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/obj/Debug/net7.0/Mailing Task.csproj.CoreCompileInputs.cache
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/bin/Debug/net7.0/Mailing Task
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/bin/Debug/net7.0/Mailing Task.deps.json
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/bin/Debug/net7.0/Mailing Task.runtimeconfig.json
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/bin/Debug/net7.0/Mailing Task.dll
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/bin/Debug/net7.0/Mailing Task.pdb
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/obj/Debug/net7.0/Mailing Task.dll
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/obj/Debug/net7.0/refint/Mailing Task.dll
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/obj/Debug/net7.0/Mailing Task.pdb
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/obj/Debug/net7.0/Mailing Task.genruntimeconfig.cache
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing Task/obj/Debug/net7.0/ref/Mailing Task.dll
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/bin/Debug/net7.0/Mailing Task
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/bin/Debug/net7.0/Mailing Task.deps.json
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/bin/Debug/net7.0/Mailing Task.runtimeconfig.json
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/bin/Debug/net7.0/Mailing Task.dll
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/bin/Debug/net7.0/Mailing Task.pdb
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/obj/Debug/net7.0/Mailing Task.csproj.AssemblyReference.cache
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/obj/Debug/net7.0/Mailing Task.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/obj/Debug/net7.0/Mailing Task.AssemblyInfoInputs.cache
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/obj/Debug/net7.0/Mailing Task.AssemblyInfo.cs
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/obj/Debug/net7.0/Mailing Task.csproj.CoreCompileInputs.cache
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/obj/Debug/net7.0/Mailing Task.dll
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/obj/Debug/net7.0/refint/Mailing Task.dll
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/obj/Debug/net7.0/Mailing Task.pdb
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/obj/Debug/net7.0/Mailing Task.genruntimeconfig.cache
+/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/obj/Debug/net7.0/ref/Mailing Task.dll
