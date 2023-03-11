@@ -18,7 +18,24 @@ public class LetterService : ILetterService
         // My implementation here.
         // Merge the text content in the two input files
         // and write the merged content to the output file.
+        if (File.Exists(resultFile)){
+            Console.WriteLine("File already exists.");
+        }
+        string[] admission = File.ReadAllLines(inputFile1);
+        string[] scholarship = File.ReadAllLines(inputFile2);
 
+        using (StreamWriter sw = File.CreateText(resultFile))
+        {
+            int lineNum = 0;
+            while(lineNum < admission.Length || lineNum < scholarship.Length)
+            {
+                if(lineNum < admission.Length)
+                    sw.WriteLine(admission[lineNum]);
+                if(lineNum < scholarship.Length)
+                    sw.WriteLine(scholarship[lineNum]);
+                lineNum++;
+            }
+        }
     
         
     }
