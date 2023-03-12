@@ -23,6 +23,9 @@ The code will only be run once a day.
 All the directores already exist.
 The names of the directories are already there. 
 
+Hours:
+I spent about 4 hours learning c sharp and dot net syntax. Then I spent 6 hours working on archiving files and the merging of files. I spent about 2 hours creating the report files
+
 Problems I had:
 When I was trying to move the the directory for the current day, I kept getting a path doesn't exist error. I was not able to fix this.
 
