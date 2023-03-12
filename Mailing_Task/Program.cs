@@ -126,6 +126,7 @@ public class LetterService : ILetterService
         LetterService p = new LetterService();
         // Keeping track of total letters combined
         int total = 0;
+        // List to keep track of UID's to put in the report
         List<string> reportID = new List<string>();
 
         // Attempt at moving files,
@@ -136,22 +137,25 @@ public class LetterService : ILetterService
         string dateString = DateTime.Now.ToString("yyyyMMdd");
         string[] admissionLetters = Directory.GetFiles("Input/Admission/" + dateString);
         string[] scholarshipLetters = Directory.GetFiles("Input/Scholarships/" + dateString);
+        // Combine lists into one to check them at the same time
         var res = admissionLetters.Zip(scholarshipLetters, (a,s) => new {Admission = a, Scholarship = s});
+        // Check if the files for the day exist
         if (Directory.Exists("Input/Admission/"+dateString) && Directory.Exists("Input/Scholarships/" + dateString)){
             foreach (var a in admissionLetters) {
-            foreach (var s in scholarshipLetters) {
-                if (a.Substring(35,8)== s.Substring(40,8)) {
-                    string id = a.Substring(35,8);
-                    reportID.Add(id);
-                    string newFile = id + "-admission-scholarship.txt";
-                    string afile = a.Substring(25,22).ToString();
-                    string sfile = s.Substring(28,24).ToString();
-                    p.CombineTwoLetters(a,s,newFile);
-                    total++;
-                         
-                }
+                foreach (var s in scholarshipLetters) {
+                    if (a.Substring(35,8)== s.Substring(40,8)) {
+                        string id = a.Substring(35,8);
+                        reportID.Add(id);
+                        string newFile = id + "-admission-scholarship.txt";
+                        string afile = a.Substring(25,22).ToString();
+                        string sfile = s.Substring(28,24).ToString();
+                        p.CombineTwoLetters(a,s,newFile);
+                        total++;
+                            
+                    }
             }
         }
+            // Create the text report
             string dateString2 = DateTime.Now.ToString("dd/MM/yyyy");
             string reportFile = dateString + "-report.txt";
             using (StreamWriter sw = new StreamWriter(reportFile)) {
@@ -163,6 +167,7 @@ public class LetterService : ILetterService
                     sw.WriteLine("  " + id);
                 }
             }
+            //Put it in the Output folder
             string destinationFile = "Output/" +reportFile;
             File.Move(reportFile,destinationFile);
         
