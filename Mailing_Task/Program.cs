@@ -12,7 +12,6 @@ public interface ILetterService
 }
 public class LetterService : ILetterService
 {
-    int total = 0;
     public void CombineTwoLetters(string inputFile1 ,string inputFile2, string resultFile) 
     {
         // My implementation here.
@@ -42,7 +41,22 @@ public class LetterService : ILetterService
     
         
     }
+    // Another attempt at moving files
+    // Think I was doing too much but couldn't get it working
     public void ArchiveFiles () {
+        string dateString = DateTime.Now.ToString("yyyyMMdd");
+        string admSourceDir = "Input/Admission/" + dateString;
+        string admDestinationDir = "Archive/Input/Admission/" + dateString;
+        string schSourceDir = "Mailing_Task/Input/Admission/" + dateString;
+        string schDestinationDir = "Mailing_Task/Archive/Input/Admission/" + dateString;
+        // Console.WriteLine(Directory.Exists(admSourceDir));
+        // Console.WriteLine(admSourceDir);
+        // Console.WriteLine(Directory.Exists(admDestinationDir));
+    
+
+        
+        
+        /*
         // Assuming current project is in CombinedLetters directory
         string dateString = DateTime.Now.ToString("yyyyMMdd");
         string admission = "Input/Admission/" + dateString;
@@ -104,11 +118,19 @@ public class LetterService : ILetterService
                 }
             }
         }
+        */
     
     }
     static void Main()
     {
         LetterService p = new LetterService();
+
+
+        // Attempt at moving files,
+        // Kept getting 
+        // 'Unhandled exception. System.IO.DirectoryNotFoundException: Could not find a part of the path '/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/Input/Admission/20230312'
+
+        /*
         string dateString = DateTime.Now.ToString("yyyyMMdd");
         string[] admissionLetters = Directory.GetFiles("Input/Admission/" + dateString);
         string[] scholarshipLetters = Directory.GetFiles("Input/Scholarships/" + dateString);
@@ -120,13 +142,25 @@ public class LetterService : ILetterService
                     string newFile = id + "-admission-scholarship.txt";
                     string afile = a.Substring(25,22).ToString();
                     string sfile = s.Substring(28,24).ToString();
-                    Console.WriteLine(a);
-                    Console.WriteLine(s);
-                    p.CombineTwoLetters(a,s,newFile);
+                    //p.CombineTwoLetters(a,s,newFile);
+                    Console.WriteLine(a.Substring(0,24));
+                    // Console.WriteLine(s);
+                    if (Directory.Exists(a.Substring(0,25)))
+                    { 
+                        if (!Directory.Exists("Archive/" + a.Substring(0,24))){
+                            //Directory.CreateDirectory("Archive/" + a.Substring(0,24));
+                            Console.WriteLine(a.Substring(0,24));
+                            //Directory.Move(a.Substring(0,24),"Archive/"+a.Substring(0,24));
+                        }
+                        else {
+                            //Directory.Move(a.Substring(0,24),"Archive/"+a.Substring(0,24));
+
+                        }
+                        //Directory.Move(a.Substring(0,24),"Archive/"+a.Substring(0,24));
+                    }   
+                         
                 }
             }
-        }
-        //p.CombineTwoLetters("admission-01301516.txt","scholarship-01301516.txt","combined.txt");
-        //p.ArchiveFiles();
+        }*/
     }
 }
