@@ -124,13 +124,15 @@ public class LetterService : ILetterService
     static void Main()
     {
         LetterService p = new LetterService();
-
+        // Keeping track of total letters combined
+        int total = 0;
+        List<string> reportID = new List<string>();
 
         // Attempt at moving files,
         // Kept getting 
         // 'Unhandled exception. System.IO.DirectoryNotFoundException: Could not find a part of the path '/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/Input/Admission/20230312'
 
-        /*
+        
         string dateString = DateTime.Now.ToString("yyyyMMdd");
         string[] admissionLetters = Directory.GetFiles("Input/Admission/" + dateString);
         string[] scholarshipLetters = Directory.GetFiles("Input/Scholarships/" + dateString);
@@ -139,28 +141,30 @@ public class LetterService : ILetterService
             foreach (var s in scholarshipLetters) {
                 if (a.Substring(35,8)== s.Substring(40,8)) {
                     string id = a.Substring(35,8);
+                    reportID.Add(id);
                     string newFile = id + "-admission-scholarship.txt";
                     string afile = a.Substring(25,22).ToString();
                     string sfile = s.Substring(28,24).ToString();
                     //p.CombineTwoLetters(a,s,newFile);
-                    Console.WriteLine(a.Substring(0,24));
-                    // Console.WriteLine(s);
-                    if (Directory.Exists(a.Substring(0,25)))
-                    { 
-                        if (!Directory.Exists("Archive/" + a.Substring(0,24))){
-                            //Directory.CreateDirectory("Archive/" + a.Substring(0,24));
-                            Console.WriteLine(a.Substring(0,24));
-                            //Directory.Move(a.Substring(0,24),"Archive/"+a.Substring(0,24));
-                        }
-                        else {
-                            //Directory.Move(a.Substring(0,24),"Archive/"+a.Substring(0,24));
-
-                        }
-                        //Directory.Move(a.Substring(0,24),"Archive/"+a.Substring(0,24));
-                    }   
+                    total++;
                          
                 }
             }
-        }*/
+        }
+        string dateString2 = DateTime.Now.ToString("dd/MM/yyyy");
+        string reportFile = dateString + "-report.txt";
+        using (StreamWriter sw = new StreamWriter(reportFile)) {
+            sw.WriteLine(dateString2 + " Report");
+            sw.WriteLine("--------------------------");
+            sw.WriteLine();
+            sw.WriteLine("Number of Combined Letters: " + total);
+            foreach (var id in reportID){
+                sw.WriteLine("  " + id);
+            }
+        }
+        string destinationFile = "Output/" +reportFile;
+        File.Move(reportFile,destinationFile);
+        
+
     }
 }
