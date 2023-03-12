@@ -137,7 +137,8 @@ public class LetterService : ILetterService
         string[] admissionLetters = Directory.GetFiles("Input/Admission/" + dateString);
         string[] scholarshipLetters = Directory.GetFiles("Input/Scholarships/" + dateString);
         var res = admissionLetters.Zip(scholarshipLetters, (a,s) => new {Admission = a, Scholarship = s});
-        foreach (var a in admissionLetters) {
+        if (Directory.Exists("Input/Admission/"+dateString) && Directory.Exists("Input/Scholarships/" + dateString)){
+            foreach (var a in admissionLetters) {
             foreach (var s in scholarshipLetters) {
                 if (a.Substring(35,8)== s.Substring(40,8)) {
                     string id = a.Substring(35,8);
@@ -145,25 +146,31 @@ public class LetterService : ILetterService
                     string newFile = id + "-admission-scholarship.txt";
                     string afile = a.Substring(25,22).ToString();
                     string sfile = s.Substring(28,24).ToString();
-                    //p.CombineTwoLetters(a,s,newFile);
+                    p.CombineTwoLetters(a,s,newFile);
                     total++;
                          
                 }
             }
         }
-        string dateString2 = DateTime.Now.ToString("dd/MM/yyyy");
-        string reportFile = dateString + "-report.txt";
-        using (StreamWriter sw = new StreamWriter(reportFile)) {
-            sw.WriteLine(dateString2 + " Report");
-            sw.WriteLine("--------------------------");
-            sw.WriteLine();
-            sw.WriteLine("Number of Combined Letters: " + total);
-            foreach (var id in reportID){
-                sw.WriteLine("  " + id);
+            string dateString2 = DateTime.Now.ToString("dd/MM/yyyy");
+            string reportFile = dateString + "-report.txt";
+            using (StreamWriter sw = new StreamWriter(reportFile)) {
+                sw.WriteLine(dateString2 + " Report");
+                sw.WriteLine("--------------------------");
+                sw.WriteLine();
+                sw.WriteLine("Number of Combined Letters: " + total);
+                foreach (var id in reportID){
+                    sw.WriteLine("  " + id);
+                }
             }
+            string destinationFile = "Output/" +reportFile;
+            File.Move(reportFile,destinationFile);
+        
         }
-        string destinationFile = "Output/" +reportFile;
-        File.Move(reportFile,destinationFile);
+        else {
+            string dateString2 = DateTime.Now.ToString("MM/dd/yyyy");
+            Console.WriteLine("No Scholarships or Admissions for " + dateString2);
+        }
         
 
     }
