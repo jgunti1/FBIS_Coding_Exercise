@@ -49,6 +49,15 @@ public class LetterService : ILetterService
         string admDestinationDir = "Archive/Input/Admission/" + dateString;
         string schSourceDir = "Mailing_Task/Input/Admission/" + dateString;
         string schDestinationDir = "Mailing_Task/Archive/Input/Admission/" + dateString;
+        if (Directory.Exists("Input/Admission/20230311")){
+            try{
+                Directory.Move("/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/Input/Admission/20230311","Archive/Input/Admission/20230311");
+            }
+            catch (Exception exp) {
+                Console.WriteLine(exp.Message);
+            }
+           
+        }
         // Console.WriteLine(Directory.Exists(admSourceDir));
         // Console.WriteLine(admSourceDir);
         // Console.WriteLine(Directory.Exists(admDestinationDir));
@@ -127,12 +136,12 @@ public class LetterService : ILetterService
         // Keeping track of total letters combined
         int total = 0;
         List<string> reportID = new List<string>();
-
+        p.ArchiveFiles();
         // Attempt at moving files,
         // Kept getting 
         // 'Unhandled exception. System.IO.DirectoryNotFoundException: Could not find a part of the path '/Users/jordangunti/Documents/FBIS_Coding_Exercise/Mailing_Task/Input/Admission/20230312'
 
-        
+        /*
         string dateString = DateTime.Now.ToString("yyyyMMdd");
         string[] admissionLetters = Directory.GetFiles("Input/Admission/" + dateString);
         string[] scholarshipLetters = Directory.GetFiles("Input/Scholarships/" + dateString);
@@ -170,7 +179,7 @@ public class LetterService : ILetterService
         else {
             string dateString2 = DateTime.Now.ToString("MM/dd/yyyy");
             Console.WriteLine("No Scholarships or Admissions for " + dateString2);
-        }
+        }*/
         
 
     }
