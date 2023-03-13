@@ -14,18 +14,21 @@ Status: Able to complete this task. Didn't really run into any problems with thi
 
 Testing:
 I have created directories for the days you could be testing for the week of 03/12/2023. There are no files in the Output folder.
-1) Open a Terminal in the Mailing_Task directory
-2) Type dotnet run
-3) The files will be created in the Output folder. 
+1) Open Program.js
+2) Open a Terminal in the Mailing_Task directory
+3) Type dotnet run
+4) The files will be created in the Output folder
+5) Add files to the given day directory with different University IDs and delete files from the output folder
 
 Some assumptions that are made:
 The code will only be run once a day.
 All the directores already exist.
 The names of the directories are already there. 
 The format of the admissions and scholarships.
+No University ID's will appear twice. 
 
 Hours:
-I spent about 4 hours learning c sharp and dot net syntax. Then I spent 6 hours working on archiving files and the merging of files. I spent about 2 hours creating the report files
+I spent about 4 hours learning c sharp and dot net syntax. Then I spent 6 hours working on archiving files and the merging of files. I spent about 2 hours creating the report files. I spent another 2 hours debugging and testing, trying to get the archive files working. In total = 14 hours. 
 
 Problems I had:
 When I was trying to move the the directory for the current day, I kept getting a path doesn't exist error. I was not able to fix this.
