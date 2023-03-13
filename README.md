@@ -22,6 +22,7 @@ Some assumptions that are made:
 The code will only be run once a day.
 All the directores already exist.
 The names of the directories are already there. 
+The format of the admissions and scholarships.
 
 Hours:
 I spent about 4 hours learning c sharp and dot net syntax. Then I spent 6 hours working on archiving files and the merging of files. I spent about 2 hours creating the report files
